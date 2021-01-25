@@ -36,7 +36,7 @@ for (hydro_model, path_parameter_name, official_convention) in hydro_model_list:
                         gcm=gcm)
             try:
                 print('Processing data file: {}'.format(file_path))
-                data = xr.open_dataset(file_path)
+                data = xr.open_dataset(file_path).load()
             except:
                 print('Failed to open data file: {}'.format(file_path))
 
