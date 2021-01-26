@@ -24,7 +24,7 @@ for location_id in locations:
         mask_path = '/pool0/data/orianac/FROM_RAID9/temp/remapped/remapUH_{}.nc'.format(
             location_id)
         mask[location_id] = xr.open_dataset(mask_path).fraction
-        weight[location_id] = np.cos(np.deg2rad(mask[location_id].lat))
+        weight[location_id] = np.cos(np.deg2rad(mask[location_id].lat, dtype=np.float32))
         weight[location_id].name = "weights"
     except:
         print('Failed to open mask: {}'.format(mask_path))
