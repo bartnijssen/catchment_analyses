@@ -56,8 +56,8 @@ for (hydro_model, path_parameter_name, official_convention) in hydro_model_list:
                 try:
                     print('\tProcessing location {}'.format(location_id))
                     data_subset = data.where(mask[location_id]).weighted(weight[location_id]).mean(dim=['lat', 'lon'], keep_attrs=True)
-                    data_subset = 'Precipitation'].attrs = prcp_attrs
-                    data_subset = 'Tair'].attrs = tair_attrs
+                    data_subset['Precipitation'].attrs = prcp_attrs
+                    data_subset['Tair'].attrs = tair_attrs
                     data_subset.to_netcdf(out_path)
                 except:
                     print('Oh no! Something failed for {} for location {}'.format(
