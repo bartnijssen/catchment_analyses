@@ -16,7 +16,7 @@ mask = {}
 area = {}
 for location_id in sorted(locations):
     try:
-        mask_path = '/pool0/data/orianac/FROM_RAID9/temp/remapped/remapUH_{}.nc'.format(
+        mask_path = '/pool0/data/orianac/FROM_RAID9/bpa/RVIC_params_masks/remapped/remapUH_{}.nc'.format(
             location_id)
         mask = xr.open_dataset(mask_path).fraction
         area_by_lat = np.cos(np.deg2rad(mask.lat, dtype=np.float32)) * areafactor

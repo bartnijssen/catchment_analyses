@@ -21,7 +21,7 @@ mask = {}
 weight = {}
 for location_id in locations:
     try:
-        mask_path = '/pool0/data/orianac/FROM_RAID9/temp/remapped/remapUH_{}.nc'.format(
+        mask_path = '/pool0/data/orianac/FROM_RAID9/bpa/RVIC_params_masks/remapped/remapUH_{}.nc'.format(
             location_id)
         mask[location_id] = xr.open_dataset(mask_path).fraction
         weight[location_id] = np.cos(np.deg2rad(mask[location_id].lat, dtype=np.float32))
