@@ -49,7 +49,7 @@ for (hydro_model, path_parameter_name, official_convention) in hydro_model_list:
                 print('Failed to open data file: {}'.format(file_path))
 
             for location_id in locations:
-                out_path = '/pool0/data/nijssen/crcc/rupp_et_al_2020/catchment_{location_id}_weighted_mean_19500101-20991231_{scenario}_{gcm}_{downscaling}_{hydro_model}-{official_convention}.nc'.format(
+                out_path = '/pool0/data/nijssen/crcc/rupp_et_al_2020/catchment_{location_id}_weighted_mean_SWE_19500101-20991231_{scenario}_{gcm}_{downscaling}_{hydro_model}-{official_convention}.nc'.format(
                     location_id=location_id,
                     hydro_model=hydro_model,
                     downscaling=downscaling,
